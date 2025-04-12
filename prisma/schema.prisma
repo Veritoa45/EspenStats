@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  name         String?
+  movements    Movement[]
+  categories   Category[]
+  vencimientos Due[]
+  createdAt    DateTime      @default(now())
+
+  @@map("Usuarios")
+}
+
+model Category {
+  id         Int        @id @default(autoincrement())
+  name       String
+  type       String     // "income" or "expense"
+  user       User       @relation(fields: [userId], references: [id])
+  userId     Int
+  movements  Movement[]
+
+  @@map("Categorias")
+}
+
+model Movement {
+  id          Int       @id @default(autoincrement())
+  amount      Float
+  type        String     // "income" or "expense"
+  date        DateTime
+  description String?
+  user        User       @relation(fields: [userId], references: [id])
+  userId      Int
+  category    Category   @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  createdAt   DateTime   @default(now())
+
+  @@map("Movimientos")
+}
+
+model Due {
+  id        Int      @id @default(autoincrement())
+  title     String
+  dueDate   DateTime
+  paid      Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  createdAt DateTime @default(now())
+
+  @@map("Vencimientos")
+}
