@@ -1,34 +1,19 @@
-"use client";
+import Header from "@/components/Landing/Header";
+import Footer from "@/components/Landing/Footer";
 
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
-export default function LoginButton() {
-  const { data: session, status } = useSession();
-  const router = useRouter();
-
-  // Si el usuario ya está autenticado, redirige al dashboard
-  useEffect(() => {
-    if (status === "authenticated") {
-      router.push("/dashboard");
-    }
-  }, [status, router]);
-
-  if (status === "loading") {
-    return <p>Cargando...</p>;
-  }
-
-  if (session) {
-    return (
-      <>
-        <p>Bienvenido, {session.user.name}</p>
-        <button onClick={() => signOut()}>Cerrar sesión</button>
-      </>
-    );
-  }
-
+export default function HomePage() {
   return (
-    <button onClick={() => signIn("google")}>Iniciar sesión con Google</button>
+    <div className="min-h-screen">
+      <Header className="bg-cyan-200" />
+      <main>
+        <p>
+          lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          voluptatibus, cumque, quibusdam, voluptates quia quisquam voluptatibus
+          cumque quibusdam voluptates quia quisquam voluptatibus cumque
+          quibusdam voluptates quia quisquam voluptatibus cumque quibusdam
+        </p>
+      </main>
+      <Footer className="bg-cyan-200" />
+    </div>
   );
 }

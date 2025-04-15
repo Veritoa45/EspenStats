@@ -6,6 +6,10 @@ export default function StatsCards() {
         <p className="text-2xl font-semibold text-green-600">$0.00</p>
       </div>
       <div className="bg-white p-4 rounded-xl shadow">
+        <h3 className="text-sm text-gray-500">Ingresos del mes</h3>
+        <p className="text-2xl font-semibold text-green-600">$0.00</p>
+      </div>
+      <div className="bg-white p-4 rounded-xl shadow">
         <h3 className="text-sm text-gray-500">Gastos del mes</h3>
         <p className="text-2xl font-semibold text-red-600">$0.00</p>
       </div>
@@ -17,6 +21,10 @@ export default function StatsCards() {
             style={{ width: "50%" }}
           ></div>
         </div>
+      </div>
+      <div className="bg-white p-4 rounded-xl shadow">
+        <h3 className="text-sm text-gray-500">Próximos vencimientos</h3>
+        <p className="text-2xl font-semibold text-red-600">Ver como lo armo</p>
       </div>
     </div>
   );

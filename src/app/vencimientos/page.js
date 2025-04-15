@@ -3,9 +3,8 @@
 import { useSession } from "next-auth/react";
 import Sidebar from "@/components/Dashboard/Sidebar";
 import DashboardHeader from "@/components/Dashboard/DashboardHeader";
-import StatsCards from "@/components/Dashboard/StatsCards";
 
-export default function DashboardPage() {
+export default function VencimientosPage() {
   const { data: session, status } = useSession();
 
   if (status === "loading") return <p>Cargando...</p>;
@@ -15,7 +14,7 @@ export default function DashboardPage() {
       <DashboardHeader userName={session?.user?.name} />
       <main className="flex min-h-screen">
         <Sidebar />
-        <StatsCards />
+
         {/* Aquí más adelante se pueden agregar los vencimientos y otros componentes */}
       </main>
     </div>
