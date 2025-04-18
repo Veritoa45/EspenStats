@@ -15,7 +15,7 @@ const StatsCards = () => {
       </div>
       <div className="bg-white p-4 rounded-xl shadow">
         <h3 className="text-sm text-gray-500">Ingresos vs Egresos</h3>
-        <div className="w-full h-3 bg-gray-200 rounded mt-2">
+        <div className="w-full h-2 bg-gray-200 rounded mt-2">
           <div
             className="h-full bg-blue-500 rounded"
             style={{ width: "50%" }}
