@@ -19,6 +19,11 @@ const AgregarMovimiento = () => {
           <option value="ingreso">Ingreso</option>
           <option value="gasto">Egreso</option>
         </select>
+        <select id="categoria" className="border border-gray-300 rounded p-2">
+          <option value="Alimentación">Alimentación</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Entretenimiento">Entretenimiento</option>
+        </select>
         <input
           type="number"
           id="monto"
