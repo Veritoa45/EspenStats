@@ -1,27 +1,31 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-const ListarCategorias = () => {
-  const [categorias, setCategorias] = useState([
+const ListarMovimientos = () => {
+  const [movimientos, setMovimientos] = useState([
     {
+      fecha: "12-04-2025",
       titulo: "Ejemplo 1",
       tipo: "Ingreso",
-      estado: "Pendiente",
+      monto: 2000,
     },
     {
+      fecha: "23-04-2025",
       titulo: "Ejemplo 2",
       tipo: "Egreso",
-      estado: "Pagado",
+      monto: 5000,
     },
     {
+      fecha: "02-04-2025",
       titulo: "Ejemplo 3",
       tipo: "Egreso",
-      estado: "Pendiente",
+      monto: 1000,
     },
     {
+      fecha: "15-04-2025",
       titulo: "Ejemplo 4",
       tipo: "Ingreso",
-      estado: "Pendiente",
+      monto: 8000,
     },
   ]);
 
@@ -31,27 +35,51 @@ const ListarCategorias = () => {
 
   return (
     <div>
-      <h3 className="title mb-4">Categorías</h3>
+      <h3 className="title mb-4">Movimientos</h3>
       <table className="table-auto border-collapse border border-violet-400 rounded-xl">
         <thead>
           <tr>
             <th className="border border-violet-400 p-4 bg-violet-300">
+              Fecha
+            </th>
+            <th className="border border-violet-400 p-4 bg-violet-300">
               Título
             </th>
-            <th className="border border-violet-400 p-4 bg-violet-300">Tipo</th>
+            <th className="border border-violet-400 p-4 bg-violet-300">Debe</th>
             <th className="border border-violet-400 p-4 bg-violet-300">
-              Estado
+              Haber
+            </th>
+            <th className="border border-violet-400 p-4 bg-violet-300">
+              Editar
             </th>
           </tr>
         </thead>
         <tbody>
-          {categorias.map((c, i) => (
+          {movimientos.map((m, i) => (
             <tr key={i}>
               <td className="border border-violet-400 p-4 bg-violet-200 text-center">
-                {c.titulo}
+                {m.fecha}
               </td>
               <td className="border border-violet-400 p-4 bg-violet-200 text-center">
-                {c.tipo}
+                {m.titulo}
+              </td>
+              <td className="border border-violet-400 p-4 bg-violet-200 text-center">
+                {/* Debe */}
+                {m.tipo === "Ingreso" ? (
+                  <span className="text-green-600 font-semibold">
+                    ${m.monto}
+                  </span>
+                ) : (
+                  "-"
+                )}
+              </td>
+              <td className="border border-violet-400 p-4 bg-violet-200 text-center">
+                {/* Haber */}
+                {m.tipo === "Egreso" ? (
+                  <span className="text-red-600 font-semibold">${m.monto}</span>
+                ) : (
+                  "-"
+                )}
               </td>
               <td className="border border-violet-400 p-4 bg-violet-200 text-center">
                 <div className="flex justify-center items-center gap-4">
@@ -79,4 +107,4 @@ const ListarCategorias = () => {
   );
 };
 
-export default ListarCategorias;
+export default ListarMovimientos;

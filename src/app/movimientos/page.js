@@ -3,6 +3,8 @@
 import { useSession } from "next-auth/react";
 import Sidebar from "@/components/Dashboard/Sidebar";
 import DashboardHeader from "@/components/Dashboard/DashboardHeader";
+import AgregarMovimiento from "@/components/Movimientos/AgregarMovimiento";
+import ListarMovimientos from "@/components/Movimientos/ListarMovimientos";
 
 export default function MovimientosPage() {
   const { data: session, status } = useSession();
@@ -14,8 +16,10 @@ export default function MovimientosPage() {
       <DashboardHeader userName={session?.user?.name} />
       <main className="flex min-h-screen">
         <Sidebar />
-
-        {/* Aquí más adelante se pueden agregar los vencimientos y otros componentes */}
+        <div className="flex-col p-4">
+          <AgregarMovimiento />
+          <ListarMovimientos />
+        </div>
       </main>
     </div>
   );
