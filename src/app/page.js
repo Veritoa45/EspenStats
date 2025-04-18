@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header className="bg-cyan-200" />
-      <main>
+      <main className="flex min-h-[calc(100vh-140px)]">
         <p>
           lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
           voluptatibus, cumque, quibusdam, voluptates quia quisquam voluptatibus
@@ -13,7 +13,7 @@ export default function HomePage() {
           quibusdam voluptates quia quisquam voluptatibus cumque quibusdam
         </p>
       </main>
-      <Footer className="bg-cyan-200" />
+      <Footer />
     </div>
   );
 }
