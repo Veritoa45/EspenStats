@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 
-export default function Header() {
+const Header = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -29,4 +29,6 @@ export default function Header() {
       </button>
     </div>
   );
-}
+};
+
+export default Header;

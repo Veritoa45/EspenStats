@@ -4,7 +4,7 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-export default function Sidebar() {
+const Sidebar = () => {
   const router = useRouter();
 
   const handleSignOut = async () => {
@@ -38,4 +38,6 @@ export default function Sidebar() {
       </button>
     </aside>
   );
-}
+};
+
+export default Sidebar;

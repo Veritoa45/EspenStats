@@ -3,6 +3,8 @@
 import { useSession } from "next-auth/react";
 import Sidebar from "@/components/Dashboard/Sidebar";
 import DashboardHeader from "@/components/Dashboard/DashboardHeader";
+import AgregarVencimiento from "@/components/Vencimientos/AgregarVencimiento";
+import ListarVencimientos from "@/components/Vencimientos/ListarVencimientos";
 
 export default function VencimientosPage() {
   const { data: session, status } = useSession();
@@ -14,7 +16,10 @@ export default function VencimientosPage() {
       <DashboardHeader userName={session?.user?.name} />
       <main className="flex min-h-screen">
         <Sidebar />
-
+        <div className="flex-col p-4">
+          <AgregarVencimiento />
+          <ListarVencimientos />
+        </div>
         {/* Aquí más adelante se pueden agregar los vencimientos y otros componentes */}
       </main>
     </div>
