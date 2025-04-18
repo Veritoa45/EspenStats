@@ -3,6 +3,8 @@
 import { useSession } from "next-auth/react";
 import Sidebar from "@/components/Dashboard/Sidebar";
 import DashboardHeader from "@/components/Dashboard/DashboardHeader";
+import AgregarCategoria from "@/components/Categorias/AgregarCategoria";
+import ListarCategorias from "@/components/Categorias/ListarCategorias";
 
 export default function CategoriasPage() {
   const { data: session, status } = useSession();
@@ -14,8 +16,10 @@ export default function CategoriasPage() {
       <DashboardHeader userName={session?.user?.name} />
       <main className="flex min-h-screen">
         <Sidebar />
-
-        {/* Aquí más adelante se pueden agregar los vencimientos y otros componentes */}
+        <div className="flex-col p-4">
+          <AgregarCategoria />
+          <ListarCategorias />
+        </div>
       </main>
     </div>
   );

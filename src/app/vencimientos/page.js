@@ -20,7 +20,6 @@ export default function VencimientosPage() {
           <AgregarVencimiento />
           <ListarVencimientos />
         </div>
-        {/* Aquí más adelante se pueden agregar los vencimientos y otros componentes */}
       </main>
     </div>
   );
