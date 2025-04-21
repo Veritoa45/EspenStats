@@ -1,11 +1,11 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import Sidebar from "@/components/Dashboard/Sidebar";
-import DashboardHeader from "@/components/Dashboard/DashboardHeader";
-import AgregarVencimiento from "@/components/Vencimientos/AgregarVencimiento";
-import ListarVencimientos from "@/components/Vencimientos/ListarVencimientos";
-import Footer from "@/components/Landing/Footer";
+import Sidebar from "@/app/components/Dashboard/Sidebar";
+import DashboardHeader from "@/app/components/Dashboard/DashboardHeader";
+import AgregarVencimiento from "@/app/components/Vencimientos/AgregarVencimiento";
+import ListarVencimientos from "@/app/components/Vencimientos/ListarVencimientos";
+import Footer from "@/app/components/Landing/Footer";
 
 const VencimientosPage = () => {
   const { data: session, status } = useSession();

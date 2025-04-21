@@ -1,5 +1,5 @@
-import Header from "@/components/Landing/Header";
-import Footer from "@/components/Landing/Footer";
+import Header from "@/app/components/Landing/Header";
+import Footer from "@/app/components/Landing/Footer";
 
 export default function HomePage() {
   return (
